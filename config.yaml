@@ -1,0 +1,24 @@
+watch_folders:
+  - "D:/Downloads"
+
+exclude_folders:
+  - "D:/Downloads/temp"
+
+rules:
+  images: ["jpg", "png", "jpeg"]
+  documents: ["pdf", "docx", "txt"]
+  code: ["py", "js", "cpp"]
+  archives: ["zip", "rar"]
+
+destinations:
+  images: "D:/Sorted/Images"
+  documents: "D:/Sorted/Documents"
+  code: "D:/Sorted/Code"
+  archives: "D:/Sorted/Archives"
+  others: "D:/Sorted/Others"
+
+schedule_hours: 12
+
+ai_enabled: true
+
+dry_run: false
