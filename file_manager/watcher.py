@@ -2,7 +2,6 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
 import yaml
-from pathlib import Path
 from .sorter import decide_destination
 from .mover import move_file
 import os
@@ -22,9 +21,7 @@ def scan_existing():
                     print("Scan error:", e)
 
 
-CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
-
-with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 class Handler(FileSystemEventHandler):

@@ -1,11 +1,8 @@
 import yaml
 import os
-from pathlib import Path
 from .ai_classifier import classify_file
 
-CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
-
-with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 def decide_destination(file_path: str) -> str:

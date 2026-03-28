@@ -2,12 +2,9 @@ import time
 import yaml
 import signal
 import sys
-from pathlib import Path
 from file_manager.scan_runner import run_scan
 
-CONFIG_PATH = Path(__file__).resolve().parent / "config.yaml"
-
-with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 INTERVAL = config.get("schedule_hours", 12) * 3600
