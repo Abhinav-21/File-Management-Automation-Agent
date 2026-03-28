@@ -1,12 +1,15 @@
 import yaml
 import os
+from pathlib import Path
 
 from file_manager.logger import save_last_run
 from .sorter import decide_destination
 from .mover import move_file
 from .logger import save_last_run
 
-with open("agent/config.yaml", "r") as f:
+CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
+
+with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 def run_scan():

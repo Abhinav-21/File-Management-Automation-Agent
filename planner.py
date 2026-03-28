@@ -1,7 +1,7 @@
 import json
 import subprocess
 
-MODEL = "qwen2.5:7b"
+MODEL = "qwen3:4b"
 
 SYSTEM_PROMPT = """
 You are a local filesystem agent.

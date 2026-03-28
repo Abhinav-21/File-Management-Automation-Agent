@@ -27,7 +27,7 @@ Return ONLY JSON:
 
 def decide_action(user_input: str):
     response = ollama.chat(
-        model="qwen2.5:7b",
+        model="qwen3:4b",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_input},

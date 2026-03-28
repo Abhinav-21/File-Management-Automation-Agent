@@ -1,7 +1,7 @@
 import ollama
 import os
 
-MODEL = "qwen2.5:7b"
+MODEL = "qwen3:4b"
 
 PROMPT = """
 Classify this file into ONE category from this list:

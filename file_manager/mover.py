@@ -1,9 +1,12 @@
 import shutil
 import os
 import yaml
+from pathlib import Path
 from .logger import log_move
 
-with open("agent/config.yaml", "r") as f:
+CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
+
+with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 DRY_RUN = config.get("dry_run", False)

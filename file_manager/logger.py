@@ -1,9 +1,11 @@
 from datetime import datetime
 import json
 import os
+from pathlib import Path
 
-LOG_FILE = "agent/file_manager/file_log.txt"
-UNDO_FILE = "agent/file_manager/last_run.json"
+BASE_DIR = Path(__file__).resolve().parent
+LOG_FILE = BASE_DIR / "file_log.txt"
+UNDO_FILE = BASE_DIR / "last_run.json"
 
 last_run = []
 

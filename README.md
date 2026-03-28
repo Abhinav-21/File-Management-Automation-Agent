@@ -16,7 +16,7 @@ Python automation tool for intelligent file organization using rule-based sortin
 - Python 3.10+ (project has been tested with Python 3.14).
 - Ollama installed and running locally.
 - Ollama model pulled:
-  - `qwen2.5:7b`
+  - `qwen3:4b`
 
 Python dependencies are listed in `requirements.txt`:
 - `ollama`
@@ -40,7 +40,31 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # 4) prepare Ollama model
-ollama pull qwen2.5:7b
+ollama pull qwen3:4b
+```
+
+## Project Structure
+```text
+.
+|-- brain.py
+|-- config.yaml
+|-- executor.py
+|-- main.py
+|-- run.py
+|-- scheduler.py
+|-- requirements.txt
+|-- file_manager/
+|   |-- ai_classifier.py
+|   |-- logger.py
+|   |-- mover.py
+|   |-- scan_runner.py
+|   |-- sorter.py
+|   `-- watcher.py
+`-- tools/
+    |-- file_tool.py
+    |-- python_tool.py
+    |-- search_tool.py
+    `-- terminal_tool.py
 ```
 
 ## Configuration
@@ -105,6 +129,3 @@ python main.py
 - If AI classification is off (`ai_enabled: false`), unknown files go to `others`.
 - If `dry_run: true`, moves are only printed and not executed.
 - Make sure all destination folders in `config.yaml` are valid for your system.
-- Current source files load config/log paths using an `agent/...` prefix. If your project is at repository root, either:
-  - move files under an `agent/` folder, or
-  - update those hardcoded paths to root-relative paths (for example `config.yaml`, `file_manager/file_log.txt`).
