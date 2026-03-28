@@ -16,7 +16,7 @@ Python automation tool for intelligent file organization using rule-based sortin
 - Python 3.10+ (project has been tested with Python 3.14).
 - Ollama installed and running locally.
 - Ollama model pulled:
-  - `qwen3:4b`
+  - `qwen3:1b`
 
 Python dependencies are listed in `requirements.txt`:
 - `ollama`
@@ -40,7 +40,7 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # 4) prepare Ollama model
-ollama pull qwen3:4b
+ollama pull qwen3:1b
 ```
 
 ## Project Structure
